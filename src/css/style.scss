@@ -1,0 +1,517 @@
+/*GENERAL*/
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #00bfff;
+  font-family: "Oxygen", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+p {
+  text-align: justify;
+}
+
+/*INTRO PAGE*/
+.introbody {
+  overflow: hidden;
+}
+
+.logo {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.bowl {
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  height: 300px;
+  background: #00bfff;
+  border-radius: 50%;
+  border: 4px solid white;
+  transform-origin: bottom center;
+  animation: swim 5s linear infinite;
+  overflow: hidden;
+}
+
+.bowl::before {
+  content: "";
+  position: absolute;
+  top: -3px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40%;
+  height: 30px;
+  background: #00bfff;
+  border: 4px solid white;
+  border-radius: 50%;
+}
+
+.bowl::after {
+  content: "";
+  position: absolute;
+  top: 13%;
+  left: 30%;
+  width: 110px;
+  height: 40px;
+  background: #6edbff;
+  border: 4px solid #6edbff;
+  border-radius: 50%;
+}
+
+.water {
+  position: absolute;
+  top: 35%;
+  left: 5px;
+  right: 5px;
+  bottom: 5px;
+  background: white;
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
+  border-bottom-right-radius: 150px;
+  border-bottom-left-radius: 150px;
+  transform-origin: top center;
+  animation: aniWater 5s linear infinite;
+}
+
+.water::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 0;
+  width: 99%;
+  height: 30px;
+  background: #1fa4e0;
+  border-radius: 50%;
+}
+
+.shadow {
+  position: absolute;
+  top: 95%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  height: 30px;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: -1;
+  border-radius: 50%;
+}
+
+img.fish {
+  position: absolute;
+  top: 20%;
+  left: 5%;
+  width: 160px;
+  animation: aniFish 5s linear infinite;
+}
+
+@keyframes aniFish {
+  0% {
+    transform: translate(0, 0) rotateY(180deg);
+  }
+  50% {
+    transform: translate(100px, 0) rotateY(180deg);
+  }
+  51% {
+    transform: translate(100px, 0) rotateY(0deg);
+  }
+  100% {
+    transform: translate(0, 0) rotateY(0deg);
+  }
+}
+@keyframes swim {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  25% {
+    transform: translate(-50%, -50%) rotate(15deg);
+  }
+  50% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  75% {
+    transform: translate(-50%, -50%) rotate(-15deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+}
+@keyframes aniWater {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-15deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  75% {
+    transform: rotate(15deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+/*LOGO, BANNER AND NAVIGATION MENU*/
+.tdlogo {
+  margin: 0;
+  padding: 0;
+}
+
+.logoposition {
+  margin-top: 0%;
+}
+
+img.inbodylogo, img.inbodybanner {
+  display: block;
+}
+
+/*Step1 SASS*/
+/*menu’s text colour from white to yellow*/
+/*menu’s text hover colour from yellow to white*/
+$navtextColor: yellow;
+$navhoverColor: white;
+
+.navmenu {
+    color: $navtextColor;
+    
+    &:hover {
+        color: $navhoverColor;
+    }
+    
+    a {
+        color: $navtextColor;
+  
+        &:hover {
+            color: $navhoverColor;
+        }
+    }
+  }
+
+
+.navmenu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  margin: 0px;
+  padding: 0px;
+  background: #34495e;
+  box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.1);
+  font-family: "Orbitron", sans-serif;
+  font-weight: bolder;
+  font-style: normal;
+  font-size: 12px;
+  /*color: white;*/ /*commented out to use Step1 SASS of Assignment3*/
+}
+
+$navbgColor: red;
+
+  /*index page does not have a button tag but will use navmenu instead*/
+  /*button’s background colour of index.html web page to red*/
+.navmenu a {
+  font-size: 12px;
+  text-transform: uppercase;
+  /*color: white;*/ /*commented out to use Step1 SASS of Assignment3*/
+  text-decoration: none;
+  line-height: 50px;
+  z-index: 2;
+  padding: 0 20px;
+  display: inline-block;
+  text-align: center;
+  cursor: pointer;
+  background-color: $navbgColor;
+  margin-right: 2px;
+}
+
+.navmenu a:hover {
+  /*color: #1abc9c;*/ /*commented out to use Step1 SASS of Assignment3*/
+}
+
+.navmenu a.active {
+  color: #1abc9c;
+  cursor: default; /* Disables pointer for current page*/
+}
+
+.navmenu a.active:hover { /*commented out to use Step1 SASS of Assignment3*/
+  /*color: #1abc9c;*/ /* Ensures color does not change on hover for current page*/
+}
+
+.tdnav {
+  margin: 0px;
+  padding: 0%;
+}
+
+/*HOMEPAGE*/
+.container {
+  display: flex;
+  width: 100%;
+  padding: 0px;
+}
+
+.g2-img {
+  width: 60%;
+}
+
+.text-right {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-left: 20px;
+}
+
+.data1 {
+  width: 100%;
+  text-align: center;
+}
+
+.data1 {
+  margin-top: 10px;
+  font-family: fantasy;
+  font-size: larger;
+  padding-left: 5px;
+  letter-spacing: 5px;
+  padding-bottom: 10px;
+}
+
+@keyframes dance {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-10px) rotate(-5deg);
+  }
+  50% {
+    transform: translateY(0) rotate(5deg);
+  }
+  75% {
+    transform: translateY(-10px) rotate(-5deg);
+  }
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+}
+.data1 {
+  animation: dance 2s ease-in-out infinite;
+}
+
+.funfacts {
+  font-size: 50px;
+  text-align: center;
+  color: yellow;
+  text-shadow: 2px 2px darkslateblue;
+}
+
+.factshead {
+  width: 30%;
+  text-align: right;
+  padding-right: 10px;
+  padding-bottom: 10px;
+}
+
+.factsdata {
+  padding-left: 10px;
+  padding-bottom: 10px;
+  width: 70%;
+}
+
+.h4 {
+  border: 1px solid black;
+  box-shadow: 4px 4px gray;
+  margin-left: 30px;
+  margin-right: 30px;
+  padding-left: 10px;
+  padding-right: 5px;
+}
+
+/*ABOUT PAGE*/
+#about {
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+#Worldcount {
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.inbodygif {
+  display: block;
+  width: 60%;
+}
+
+.tab2 {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.tdabout {
+  border: 1px solid black;
+  padding: 8px;
+  text-align: left;
+}
+
+.Data1 {
+  background-color: grey;
+}
+
+.Data2 {
+  background-color: DimGrey;
+}
+
+/* MARINE PAGE */
+.marinehead1 {
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.grouper-info {
+  border: 1px solid black;
+  box-shadow: 4px 4px gray;
+  margin-left: 100px;
+  margin-right: 70px;
+  padding: 20px;
+}
+
+.ciguatera-def {
+  position: relative;
+  cursor: pointer;
+  color: blue;
+  text-decoration: underline;
+}
+
+.ciguatera-def::before {
+  content: attr(data-description);
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #fff;
+  color: #000;
+  padding: 10px 15px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  white-space: normal;
+  width: 300px; /* Set a specific width for the tooltip */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.ciguatera-def:hover::before {
+  opacity: 1;
+  visibility: visible;
+}
+
+.foodhabits-img {
+  text-align: center;
+  justify-items: center;
+}
+
+.fig1 {
+  text-align: center;
+}
+
+.conserv-section {
+  border: 1px solid black;
+  box-shadow: 4px 4px gray;
+  margin-left: 100px;
+  margin-right: 70px;
+  padding: 20px;
+}
+
+.conserv-section-p {
+  font-style: oblique;
+}
+
+/* WORLD PAGE */
+.legends {
+  margin-left: 20%;
+}
+
+.fig2 {
+  margin-top: 3%;
+  margin-right: 10%;
+  margin-left: 2%;
+}
+
+.worldcount {
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.world-tab {
+  margin-left: 10%;
+  border: 1px solid black;
+  background-color: white;
+}
+
+.rowhead {
+  background-color: darkolivegreen;
+}
+
+.rowsub {
+  background-color: #1abc9c;
+}
+
+.row:nth-child(even) {
+  background-color: white;
+}
+
+.row:nth-child(odd) {
+  background-color: bisque;
+}
+
+.worlddataO {
+  background-color: white;
+}
+
+.worlddataE {
+  background-color: bisque;
+}
+
+/*.worlddataM {
+    background-color: lightgray;
+    border: 1px solid black;
+}
+.worlddata {
+    border: 1px solid black;
+}*/
+/* HONESTY PAGE */
+.honesty {
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.cred-td {
+  padding: 10px;
+  vertical-align: top;
+}
+
+/*FOOTER*/
+.footer {
+  background-color: #00bfff;
+  color: white;
+  width: 100%;
+  height: 100%;
+  font-size: smaller;
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.footer-p {
+  text-align: center;
+}/*# sourceMappingURL=style.css.map */

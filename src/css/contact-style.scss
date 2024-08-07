@@ -1,0 +1,114 @@
+* {
+    font-family: "Proza Libre", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+}
+.form-position {
+    margin: 5%;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.contact-title {
+    text-shadow: 1px 1px green;
+    font-size: 26px;
+    padding: 20px;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    background-color: white;
+    position:absolute;
+    top: -10%;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+@keyframes fadeInSlideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+$borderForm: 1px dashed black;
+
+/*dashed border to the Contact Us Form*/
+.formbody {
+    padding: 60px 30px 20px;
+    border-radius: 4px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+    background-color: #1abc9c;
+    position: relative;
+    animation: fadeInSlideUp 1s ease-out;
+    border: $borderForm;
+    z-index: 10; /* Ensure it's above other elements */
+}
+.form-input {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin: 20px 0; /* Increased margin to add space between fields */
+    position: relative;
+}
+.form-input label {
+    flex-basis: 20%;
+    padding-right: 20px;
+    text-align: right;
+}
+.input-wrapper {
+    flex-basis: 68%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+.user-input, .input-wrapper textarea {
+    width: 100%;
+    background: white;
+    border: 0;
+    outline: 0;
+    padding: 10px;
+    border-bottom: 1px solid #999;
+    color: #333;
+    font-size: 16px;
+    box-sizing: border-box; /* Ensure padding is included in width */
+}
+.error-message {
+    color: red;
+    font-size: 12px;
+    position: absolute;
+    top: 100%; /* Position it directly below the input */
+    left: 0;
+    width: 100%;
+    margin-top: 0;
+    height: auto; /* Adjust height based on content */
+    overflow: visible; /* Ensure error messages are fully visible */
+    z-index: 1; /* Ensure error messages are above other elements */
+}
+::placeholder {
+    padding-left: 5px;
+    font-size: 14px;
+}
+button {
+    background: #141a34;
+    color: #fff;
+    border-radius: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    padding: 10px 40px;
+    outline: 0;
+    cursor: pointer;
+    display: block;
+    margin: 30px auto 10px;
+    flex-direction: column;
+
+    &:hover {
+        text-transform: uppercase;
+      }
+}
+
+.footer-p {
+    font-family: "Oxygen", sans-serif;
+    font-weight: 400;
+}
