@@ -13,12 +13,12 @@ document.addEventListener('DOMContentLoaded', function() {
         currentIndex = index;
         lightboxImg.src = images[currentIndex];
         lightbox.style.display = 'block';
-        document.body.style.overflow = 'hidden'; // Hide scrollbar
+        document.body.style.overflow = 'hidden'; //Hide scrollbar if image is clicked
     }
 
     function closeLightbox() {
         lightbox.style.display = 'none';
-        document.body.style.overflow = ''; // Restore scrollbar
+        document.body.style.overflow = ''; //Restore scrollbar if lightbox cloed
     }
 
     function showNext() {
