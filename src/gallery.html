@@ -11,6 +11,7 @@
     <link rel="stylesheet" type="text/css" href="../src/css/style.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="../src/header.js"></script>
+    <script src="../src/gallery.js"></script>
 </head>
 <body class="homebody">
     <!-- Logo, banner, and navigation menu -->
@@ -72,84 +73,25 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         $(document).ready(function() {
-
-var currentIndex = 0;
-
-var items = [];
-
-$(".lightbox").on("click", function(event) {
-
-  event.preventDefault();
-
-  items = $(".lightbox").toArray().map(function(elem) {
-
-    return $(elem).attr("href");
-
-  });    currentIndex = items.indexOf($(this).attr("href"));
-
-  showLightbox();
-
-});
-
-function showLightbox() {
-
-  $("#lightbox").show();
-
-  updateLightbox();
-
-}
-
-function updateLightbox() {
-
-  var item = items[currentIndex];
-
-  if (item.endsWith(".jpg") || item.endsWith(".png")) {
-
-    $("#lightbox-img").attr("src", item).show();
-
-    $("#lightbox-video").hide();
-
-  } else if (item.endsWith(".mp4")) {
-
-    $("#lightbox-video").attr("src", item).show();
-
-    $("#lightbox-img").hide();
-
-  }  }
-
-$(".close").on("click", function() {
-
-  $("#lightbox").hide();
-
-});
-
-$(document).on("click", function(event) {
-
-  if ($(event.target).is("#lightbox")) {
-
-    $("#lightbox").hide();
-
-  }
-
-});
-
-$(".next").on("click", function() {
-
-  currentIndex = (currentIndex + 1) % items.length;
-
-  updateLightbox();
-
-});
-
-$(".prev").on("click", function() {
-
-  currentIndex = (currentIndex - 1 + items.length) % items.length;
-
-  updateLightbox();
-
-});
-
-});
+            var header = $('.header-container');
+            var headerHeight = header.outerHeight();
+            $(window).scroll(function() {
+                if ($(this).scrollTop() > headerHeight) {
+                    header.css({
+                        'position': 'fixed',
+                        'top': '0',
+                        'width': '100%',
+                        'z-index': '1000',
+                        'box-shadow': '0 4px 8px rgba(0,0,0,0.1)'
+                    });
+                } else {
+                    header.css({
+                        'position': 'static',
+                        'box-shadow': 'none'
+                    });
+                }
+            });
+        });
     </script>
 </body>
 </html>
