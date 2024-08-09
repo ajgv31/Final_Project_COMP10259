@@ -1,4 +1,4 @@
-body {
+* {
   font-family: "Proza Libre", sans-serif;
   font-weight: 600;
   font-style: normal;
@@ -122,4 +122,4 @@ button:hover {
 .footer-p {
   font-family: "Oxygen", sans-serif;
   font-weight: 400;
-}
+}/*# sourceMappingURL=contact-style.css.map */
