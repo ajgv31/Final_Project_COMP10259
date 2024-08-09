@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function() {
      if (e.target === lightbox || e.target === closeBtn) {
      closeLightbox();
      }
-     });
-    });
+  });
+});
     
     
